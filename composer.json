@@ -1,0 +1,20 @@
+{
+    "name": "castiron/typo3-webpackassets",
+    "description": "Webpack hashed files in TYPO3 CMS",
+    "type": "library",
+    "require": {
+        "typo3/cms": "^8.7"
+    },
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "Gabe Blair",
+            "email": "gabe@castironcoding.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Castiron\\WebpackAssets\\": "src/"
+        }
+    }
+}
