@@ -114,8 +114,17 @@ class AbstractWebpackAssetsViewHelper extends AbstractViewHelper {
      */
     protected static function absolutizeUrls($urls = []) {
         return array_map(function ($url) {
-            return DIRECTORY_SEPARATOR . ltrim($url, DIRECTORY_SEPARATOR);
+            return static::absolutizeUrl($url);
         }, $urls);
+    }
+
+    /**
+     * @param $url
+     * @return string
+     */
+    protected static function absolutizeUrl($url) {
+        return (preg_match('~^https?~', $url) ? '' : DIRECTORY_SEPARATOR)
+            . ltrim($url, DIRECTORY_SEPARATOR);
     }
 
     /**
